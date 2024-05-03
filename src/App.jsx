@@ -142,7 +142,7 @@ class App extends Component {
   return (
     <>
       <div className="App">
-        <ParticlesBg type="fountain" bg={true} />
+        {/* <ParticlesBg type="fountain" bg={true} /> */}
         <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignIn}/>
         {route === 'login' ? (
           <>
