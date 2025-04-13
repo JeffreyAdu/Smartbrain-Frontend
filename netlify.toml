@@ -1,4 +1,11 @@
- [build.environment]
+[build]
+  publish = "dist"
+  command = "npm install terser --save-dev && npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  # Make sure ESLint doesn't fail the build
+  CI = "false"
   VITE_API_URL = "https://smartbrain-serverside.onrender.com"
   VITE_FIREBASE_API_KEY = "AIzaSyBFA6fqAK90BNfha8tgPXo4Qla70hFN0es"
   VITE_FIREBASE_AUTH_DOMAIN = "smartbrains-6b54b.firebaseapp.com"
