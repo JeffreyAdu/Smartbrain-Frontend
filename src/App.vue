@@ -1,14 +1,40 @@
 <template>
-<router-view></router-view>
+  <div class="app">
+    <Navbar v-if="showNavbar" />
+    <main class="min-h-screen bg-gray-50">
+      <LoadingScreen v-if="userStore.loading" />
+      <router-view v-else />
+    </main>
+    <AppFooter v-if="showFooter" />
+  </div>
 </template>
 
-<script>
-// import LoginForm from "./components/LoginForm.vue"
-// import db from "./db";
+<script setup>
+import { useUserStore } from './stores/userStore';
+import { computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import Navbar from './components/layout/Navbar.vue';
+import AppFooter from './components/layout/Footer.vue';
+import LoadingScreen from './components/ui/LoadingScreen.vue';
 
-export default {
-  // components: { LoginForm },
-};
+const userStore = useUserStore();
+const route = useRoute();
+
+// Initialize auth listener on app load
+onMounted(() => {
+  userStore.init();
+});
+
+// Only show navbar and footer on certain routes
+const showNavbar = computed(() => {
+  // Hide navbar on auth pages
+  return !route.meta.hideNavbar;
+});
+
+const showFooter = computed(() => {
+  // Hide footer on auth pages
+  return !route.meta.hideFooter;
+});
 </script>
 
 <style >
