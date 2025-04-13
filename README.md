@@ -30,12 +30,14 @@ SmartBrain is a modern web application that detects faces in images using advanc
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/yourusername/smartbrain-frontend.git
 cd smartbrain-frontend
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 # or
@@ -43,6 +45,7 @@ yarn install
 ```
 
 3. Start the development server
+
 ```bash
 npm run dev
 # or
@@ -64,6 +67,7 @@ The built files will be in the `dist` directory.
 ## Deployment
 
 The application can be deployed to any static site hosting service like:
+
 - Netlify
 - Vercel
 - Firebase Hosting
@@ -98,7 +102,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgements
 
-- [Clarifai API](https://www.clarifai.com/) for face detection functionality
+- [Jeffrey Adu's API](https://github.com/JeffreyAdu) for face detection functionality
 - [Tailwind CSS](https://tailwindcss.com/) for styling
 - [Firebase](https://firebase.google.com/) for authentication
 - [Vue.js](https://vuejs.org/) for the frontend framework
