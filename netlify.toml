@@ -1,0 +1,42 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "16"
+
+# Production context: all deploys from the Production branch set in your site's
+# deploy contexts will inherit these settings.
+[context.production.environment]
+  # Production environment variables should be set in the Netlify dashboard
+  VITE_API_URL = "https://smartbrain-serverside.onrender.com"
+  VITE_FIREBASE_API_KEY = "AIzaSyBFA6fqAK90BNfha8tgPXo4Qla70hFN0es"
+  VITE_FIREBASE_AUTH_DOMAIN = "smartbrains-6b54b.firebaseapp.com"
+  VITE_FIREBASE_DATABASE_URL = "https://smartbrains-6b54b-default-rtdb.firebaseio.com"
+  VITE_FIREBASE_PROJECT_ID = "smartbrains-6b54b"
+  VITE_FIREBASE_STORAGE_BUCKET = "smartbrains-6b54b.appspot.com"
+  VITE_FIREBASE_MESSAGING_SENDER_ID = "532046064190"
+  VITE_FIREBASE_APP_ID = "1:532046064190:web:992c585455a9e61939bf6f"
+
+# Branch deploy context: all deploys that are not from Production branch will
+# inherit these settings.
+[context.branch-deploy.environment]
+  # Staging/development environment variables
+  VITE_API_URL = "https://smartbrain-serverside.onrender.com"
+  VITE_FIREBASE_API_KEY = "AIzaSyBFA6fqAK90BNfha8tgPXo4Qla70hFN0es"
+  VITE_FIREBASE_AUTH_DOMAIN = "smartbrains-6b54b.firebaseapp.com"
+  VITE_FIREBASE_DATABASE_URL = "https://smartbrains-6b54b-default-rtdb.firebaseio.com"
+  VITE_FIREBASE_PROJECT_ID = "smartbrains-6b54b"
+  VITE_FIREBASE_STORAGE_BUCKET = "smartbrains-6b54b.appspot.com"
+  VITE_FIREBASE_MESSAGING_SENDER_ID = "532046064190"
+  VITE_FIREBASE_APP_ID = "1:532046064190:web:992c585455a9e61939bf6f"
+
+# Dev context: environment variables for netlify dev
+[context.dev.environment]
+  # Local development will use the variables from .env file
+
+# Redirects for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 

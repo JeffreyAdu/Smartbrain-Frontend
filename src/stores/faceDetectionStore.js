@@ -9,7 +9,7 @@ export const useFaceDetectionStore = defineStore('faceDetection', () => {
   const error = ref(null);
   const history = ref([]);
   
-  const API_URL = 'https://smartbrain-serverside.onrender.com';
+  const API_URL = import.meta.env.VITE_API_URL || 'https://smartbrain-serverside.onrender.com';
 
   async function detectFace(url) {
     if (!url) {
