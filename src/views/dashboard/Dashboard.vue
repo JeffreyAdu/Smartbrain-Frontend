@@ -78,10 +78,10 @@
                 </div>
               </div>
             </div>
-            <div class="bg-gray-50 px-5 py-3 border-t border-gray-100">
-              <div class="text-sm">
+            <div class="px-5 py-3 border-t border-gray-100">
+              <!-- <div class="text-sm">
                 <a href="#" class="font-medium text-primary hover:text-primary-dark">View details</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
